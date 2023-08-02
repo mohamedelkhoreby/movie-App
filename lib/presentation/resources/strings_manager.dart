@@ -1,7 +1,12 @@
 class AppStrings{
   static const String appName ="movie";
+  static const String homeTitle ="Home";
   static const noRouteFound = "no Route Found";
   static const String success = "success";
+    // state renderer
+  static const loading = "loading...";
+  static const ok = "ok";
+  static const retryAgain = "Retry";
     // error handler
   static const String badRequestError = "bad request error";
   static const String noContent = "no content";

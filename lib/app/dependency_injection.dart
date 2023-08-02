@@ -11,6 +11,7 @@ import '../data/network/network_info.dart';
 import '../data/repository/repository_impl.dart';
 import '../domin/repository/repository.dart';
 import '../domin/usecase/home_usecase.dart';
+import '../presentation/main/pages/movie/view_model/home_viewmodel.dart';
 import 'app_prefs.dart';
 
 final instance = GetIt.instance;
@@ -49,8 +50,7 @@ Future<void> initAppModule() async {
 
 initHomeModule() {
   if (!GetIt.I.isRegistered<HomeUseCase>()) {
-    instance.registerFactory<HomeUseCase>(() => HomeUseCase(instance()));/*
+    instance.registerFactory<HomeUseCase>(() => HomeUseCase(instance()));
     instance.registerFactory<HomeViewModel>(() => HomeViewModel(instance()));
-    instance.registerFactory<MenuViewModel>(() => MenuViewModel(instance()));*/
   }
 }

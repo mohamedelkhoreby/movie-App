@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie/presentation/resources/strings_manager.dart';
 
-import '../main/view/mainView.dart';
+import '../main/main_view.dart';
 
 class Routes{
   static const String mainRoute = '/';
