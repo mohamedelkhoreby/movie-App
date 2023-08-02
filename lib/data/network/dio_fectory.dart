@@ -7,6 +7,7 @@ import '../../app/constant.dart';
 const String APPLICATION_JSON = "application/json";
 const String CONTENT_TYPE = "content-type";
 const String ACCEPT = "accept";
+const String AUTHORIZATION = "authorization";
 class DioFactory {
    final AppPreferences _appPreferences;
 
@@ -19,6 +20,7 @@ class DioFactory {
     Map<String, String> headers = {
       CONTENT_TYPE: APPLICATION_JSON,
       ACCEPT: APPLICATION_JSON,
+      AUTHORIZATION: token,
     };
 
     dio.options = BaseOptions(

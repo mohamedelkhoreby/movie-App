@@ -10,11 +10,11 @@ extension StoreResponseMapper on StoreResponse? {
   Store toDomain() {
     return Store(
         this?.id?.orZero() ?? ZERO,
-        this?.title?.orEmpty() ?? EMPTY,
+        this?.Title?.orEmpty() ?? EMPTY,
         this?.Year?.orEmpty() ?? EMPTY,
         this?.Rated?.orEmpty() ?? EMPTY,
         this?.Released?.orEmpty() ?? EMPTY,
-        this?.images?.orEmpty() ?? EMPTY,
+        this?.Images?.orEmpty() ?? EMPTY,
     );
   }
 }

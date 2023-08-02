@@ -12,18 +12,18 @@ class BaseResponse {
 class StoreResponse {
   @JsonKey(name: 'id')
   int? id;
-  @JsonKey(name: 'title')
-  String? title;
+  @JsonKey(name: 'Title')
+  String? Title;
   @JsonKey(name: 'Year')
   String? Year;
   @JsonKey(name: 'Rated')
   String? Rated;
   @JsonKey(name: 'Released')
   String? Released;
-  @JsonKey(name: 'images')
-  String? images;
+  @JsonKey(name: 'Images')
+  String? Images;
  
-  StoreResponse(this.id, this.title,this.Year,this.Rated,this.Released,this.images);
+  StoreResponse(this.id, this.Title,this.Year,this.Rated,this.Released,this.Images);
 
 // toJson
   Map<String, dynamic> toJson() => _$StoreResponseToJson(this);

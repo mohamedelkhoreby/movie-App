@@ -9,14 +9,13 @@ import 'package:movie/presentation/base/base_model_view.dart';
 import '../../../../common/state_renderer/state_renderer.dart';
 import '../../../../common/state_renderer/state_renderer_impl.dart';
 
-
 class HomeViewModel extends BaseViewModel
-    with  HomeViewModelInput,  HomeViewModelOutput {
-  final _dataStreamController = BehaviorSubject< HomeViewObject>();
+    with HomeViewModelInput, HomeViewModelOutput {
+  final _dataStreamController = BehaviorSubject<HomeViewObject>();
 
   final HomeUseCase _homeUseCase;
 
- HomeViewModel(this._homeUseCase);
+  HomeViewModel(this._homeUseCase);
 
   // --  inputs
   @override
@@ -28,18 +27,17 @@ class HomeViewModel extends BaseViewModel
     inputState.add(LoadingState(
         stateRendererType: StateRendererType.fullScreenLoadingState));
     (await _homeUseCase.execute(Void)).fold(
-            (failure) => {
-          // left -> failure
-          inputState.add(ErrorState(StateRendererType.fullScreenErrorState, failure.message))
-        },(homeObject) {
+        (failure) => {
+              // left -> failure
+              inputState.add(ErrorState(
+                  StateRendererType.fullScreenErrorState, failure.message))
+            }, (homeObject) {
       // right -> data (success)
       // content
       inputState.add(ContentState());
       inputHomeData.add(HomeViewObject(
-          homeObject.data.stores,
-
+        homeObject.data.stores,
       ));
-      // navigate to main screen
     });
   }
 
@@ -54,7 +52,7 @@ class HomeViewModel extends BaseViewModel
 
   // -- outputs
   @override
-  Stream< HomeViewObject> get outputHomeData =>
+  Stream<HomeViewObject> get outputHomeData =>
       _dataStreamController.stream.map((data) => data);
 }
 
@@ -62,11 +60,12 @@ abstract class HomeViewModelInput {
   Sink get inputHomeData;
 }
 
-abstract class  HomeViewModelOutput {
-  Stream< HomeViewObject> get outputHomeData;
+abstract class HomeViewModelOutput {
+  Stream<HomeViewObject> get outputHomeData;
 }
 
-class  HomeViewObject {
+class HomeViewObject {
   List<Store> stores;
- HomeViewObject(this.stores);
+
+  HomeViewObject(this.stores);
 }

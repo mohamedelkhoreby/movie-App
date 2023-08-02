@@ -1,12 +1,12 @@
 // home model
 class Store{
   int id;
-  String title;
+  String Title;
   String Year; 
   String Rated;
   String Released;
-  String images;
-  Store(this.id, this.title,this.Year,this.Released,this.Rated, this.images);
+  String Images;
+  Store(this.id, this.Title,this.Year,this.Released,this.Rated, this.Images);
 }
 
 class HomeData {

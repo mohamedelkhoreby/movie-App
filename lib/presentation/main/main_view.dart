@@ -53,7 +53,9 @@ return Scaffold(
                   BottomNavigationBarItem(
                       icon: Icon(Icons.home_outlined),
                       label: AppStrings.homeTitle),
-                 
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.search),
+                      label: AppStrings.searchTitle),
                 ],
               ),
             ),

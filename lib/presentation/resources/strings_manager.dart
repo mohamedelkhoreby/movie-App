@@ -1,8 +1,11 @@
 class AppStrings{
   static const String appName ="movie";
   static const String homeTitle ="Home";
+  static const String searchTitle ="search";
   static const noRouteFound = "no Route Found";
   static const String success = "success";
+  static const String dash= "-";
+
     // state renderer
   static const loading = "loading...";
   static const ok = "ok";

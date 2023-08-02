@@ -19,27 +19,28 @@ Map<String, dynamic> _$BaseResponseToJson(BaseResponse instance) =>
 StoreResponse _$StoreResponseFromJson(Map<String, dynamic> json) =>
     StoreResponse(
       json['id'] as int?,
-      json['title'] as String?,
+      json['Title'] as String?,
       json['Year'] as String?,
       json['Rated'] as String?,
       json['Released'] as String?,
-      json['images'] as String?,
+      json['Images'] as String?,
     );
 
 Map<String, dynamic> _$StoreResponseToJson(StoreResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'title': instance.title,
+      'Title': instance.Title,
       'Year': instance.Year,
       'Rated': instance.Rated,
       'Released': instance.Released,
-      'images': instance.images
+      'Images': instance.Images,
     };
+
 HomeDataResponse _$HomeDataResponseFromJson(Map<String, dynamic> json) =>
     HomeDataResponse(
       (json['stores'] as List<dynamic>?)
           ?.map((e) => StoreResponse.fromJson(e as Map<String, dynamic>))
-          .toList()
+          .toList(),
     );
 
 Map<String, dynamic> _$HomeDataResponseToJson(HomeDataResponse instance) =>

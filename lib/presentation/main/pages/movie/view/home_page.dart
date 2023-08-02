@@ -1,6 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie/presentation/resources/strings_manager.dart';
 
 import '../../../../../app/dependency_injection.dart';
 import '../../../../../domin/model/model.dart';
@@ -16,11 +16,9 @@ class HomePage extends StatefulWidget {
   @override
   HomePageState createState() => HomePageState();
 }
-class HomePageState extends State<HomePage>
-with SingleTickerProviderStateMixin {
 
-   final HomeViewModel _viewModel = instance<HomeViewModel>();
-
+class HomePageState extends State<HomePage> {
+  final HomeViewModel _viewModel = instance<HomeViewModel>();
   _bind() {
     _viewModel.start();
   }
@@ -31,7 +29,7 @@ with SingleTickerProviderStateMixin {
     super.initState();
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
@@ -48,7 +46,7 @@ with SingleTickerProviderStateMixin {
     );
   }
 
-Widget _getContentWidget() {
+  Widget _getContentWidget() {
     double screenHeight = MediaQuery.of(context).size.height;
     return StreamBuilder<HomeViewObject>(
         stream: _viewModel.outputHomeData,
@@ -61,6 +59,7 @@ Widget _getContentWidget() {
           );
         });
   }
+
   Widget _getStoresWidget(List<Store>? stores, screenHeight) {
     if (stores != null) {
       return Column(
@@ -76,14 +75,14 @@ Widget _getContentWidget() {
               shrinkWrap: true,
               children: List.generate(stores.length, (index) {
                 return Column(children: [
-                   Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                          image: NetworkImage(stores[index].images),
-                          fit: BoxFit.cover,
-                        )),
-                      ),
+                  Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: NetworkImage(stores[index].Images),
+                      fit: BoxFit.cover,
+                    )),
+                  ),
                   SizedBox(
                     height: 40,
                     child: Row(
@@ -94,11 +93,17 @@ Widget _getContentWidget() {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                stores[index].title + stores[index].Year,
+                                stores[index].Title +
+                                    AppStrings.dash +
+                                    stores[index].Year,
                                 style: getRegularStyle(
                                     color: ColorManager.black,
                                     fontSize: AppSize.s8),
-                              ), Text(stores[index].Released + stores[index].Rated,
+                              ),
+                              Text(
+                                  stores[index].Released +
+                                      AppStrings.dash +
+                                      stores[index].Rated,
                                   style: getBoldStyle(
                                       color: ColorManager.black,
                                       fontSize: AppSize.s8)),
