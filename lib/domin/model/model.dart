@@ -3,10 +3,10 @@ class Store{
   int id;
   String title;
   String Year; 
-  String  Rated;
-  String  Released;
-  String image;
-  Store(this.id, this.title,this.Year,this.Released,this.Rated, this.image);
+  String Rated;
+  String Released;
+  String images;
+  Store(this.id, this.title,this.Year,this.Released,this.Rated, this.images);
 }
 
 class HomeData {
