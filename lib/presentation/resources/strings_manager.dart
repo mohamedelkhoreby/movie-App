@@ -1,16 +1,21 @@
-class AppStrings{
-  static const String appName ="movie";
-  static const String homeTitle ="Home";
-  static const String searchTitle ="search";
+class AppStrings {
+  //home page
+  static const String appName = "movie";
+  static const String homeTitle = "Home";
   static const noRouteFound = "no Route Found";
   static const String success = "success";
-  static const String dash= "-";
+  static const String dash = "-";
 
-    // state renderer
+  //search page
+  static const String searchTitle = "search";
+  static const String noMovieFound = "no movie found";
+
+  // state renderer
   static const loading = "loading...";
   static const ok = "ok";
   static const retryAgain = "Retry";
-    // error handler
+  
+  // error handler
   static const String badRequestError = "bad request error";
   static const String noContent = "no content";
   static const String forbiddenError = "forbidden";

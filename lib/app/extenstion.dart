@@ -1,17 +1,18 @@
 extension NonNullString on String? {
-  String orEmpty(){
-    if(this == null){
+  String orEmpty() {
+    if (this == null) {
       return "";
-    }else{
+    } else {
       return this!;
     }
   }
 }
+
 extension NonNullInteger on int? {
-  int orZero(){
-    if(this == null){
+  int orZero() {
+    if (this == null) {
       return 0;
-    }else{
+    } else {
       return this!;
     }
   }

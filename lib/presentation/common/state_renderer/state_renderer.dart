@@ -1,8 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
-
 
 import '../../resources/assets_manager.dart';
 import '../../resources/colors_manager.dart';
@@ -10,6 +7,7 @@ import '../../resources/font_manager.dart';
 import '../../resources/strings_manager.dart';
 import '../../resources/style_manager.dart';
 import '../../resources/values_manager.dart';
+
 enum StateRendererType {
   // POPUP STATES (DIALOG)
   popupLoadingState,
@@ -23,8 +21,6 @@ enum StateRendererType {
   contentState
 }
 
-
-
 class StateRenderer extends StatelessWidget {
   final StateRendererType stateRendererType;
   final String message;
@@ -32,10 +28,11 @@ class StateRenderer extends StatelessWidget {
   final Function retryActionFunction;
 
   const StateRenderer(
-      {super.key, required this.stateRendererType,
-        this.message = AppStrings.loading,
-        this.title = "",
-        required this.retryActionFunction});
+      {super.key,
+      required this.stateRendererType,
+      this.message = AppStrings.loading,
+      this.title = "",
+      required this.retryActionFunction});
 
   @override
   Widget build(BuildContext context) {

@@ -19,6 +19,7 @@ enum DataSource {
   NO_INTERNET_CONNECTION,
   DEFAULT
 }
+
 class ErrorHandler implements Exception {
   late Failure failure;
 
@@ -34,6 +35,7 @@ class ErrorHandler implements Exception {
     }
   }
 }
+
 Failure _handleError(DioError error) {
   switch (error.type) {
     case DioErrorType.connectTimeout:
@@ -100,6 +102,7 @@ extension DataSourceExtension on DataSource {
     }
   }
 }
+
 class ResponseCode {
   // API status codes
   static const int SUCCESS = 200; // success with data
@@ -108,9 +111,9 @@ class ResponseCode {
   static const int FORBIDDEN = 403; // failure, api rejected the request
   static const int UNAUTHORISED = 401; // failure user is not authorised
   static const int NOT_FOUND =
-  404; // failure, api url is not correct and not found
+      404; // failure, api url is not correct and not found
   static const int INTERNAL_SERVER_ERROR =
-  500; // failure, crash happened in server side
+      500; // failure, crash happened in server side
 
   // local status code
   static const int DEFAULT = -1;
@@ -121,6 +124,7 @@ class ResponseCode {
   static const int CACHE_ERROR = -6;
   static const int NO_INTERNET_CONNECTION = -7;
 }
+
 class ResponseMessage {
   // API status codes
   // API response codes

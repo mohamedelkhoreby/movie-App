@@ -10,7 +10,8 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
       fontWeight: fontWeight);
 }
 
-TextStyle getBlackStyle({double fontSize = FontSize.s50, required Color color}) {
+TextStyle getBlackStyle(
+    {double fontSize = FontSize.s50, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.black, color);
 }
 
@@ -18,7 +19,8 @@ TextStyle getBoldStyle({double fontSize = FontSize.s25, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.bold, color);
 }
 
-TextStyle getSemiBoldStyle({double fontSize = FontSize.s25, required Color color}) {
+TextStyle getSemiBoldStyle(
+    {double fontSize = FontSize.s25, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.semiBold, color);
 }
 // medium style
@@ -58,6 +60,7 @@ TextStyle getRegularStyle4(
   return _getTextStyle(fontSize, FontWeightManager.regular, color);
 }
 
-TextStyle getLightStyle({double fontSize = FontSize.s28, required Color color}) {
+TextStyle getLightStyle(
+    {double fontSize = FontSize.s28, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.regular, color);
 }

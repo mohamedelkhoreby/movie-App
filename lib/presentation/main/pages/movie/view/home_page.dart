@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   final HomeViewModel _viewModel = instance<HomeViewModel>();
+
   _bind() {
     _viewModel.start();
   }

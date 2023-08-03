@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie/presentation/main/pages/search/view/page.dart';
 
 import '../resources/colors_manager.dart';
 import '../resources/strings_manager.dart';
@@ -10,59 +11,57 @@ class MainView extends StatefulWidget {
   @override
   MainViewState createState() => MainViewState();
 }
-class MainViewState extends State<MainView>{
-    List<Widget> pages = [
+
+class MainViewState extends State<MainView> {
+  List<Widget> pages = [
     const HomePage(),
+    const SPage()
   ];
-  List<String> titles = [
-    AppStrings.homeTitle,
-  ];
+  List<String> titles = [AppStrings.homeTitle, AppStrings.searchTitle];
   var _title = AppStrings.homeTitle;
   var _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorManager.white,
-        shadowColor: ColorManager.lightGrey,
-        elevation: 0.2,
-        title: Text(_title, style: getBoldStyle(color: ColorManager.black)),
-      ),
-      body: Stack(
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: ColorManager.white,
+          shadowColor: ColorManager.lightGrey,
+          elevation: 0.2,
+          title: Text(_title, style: getBoldStyle(color: ColorManager.black)),),
+        body: Stack(
           children: <Widget>[
-       pages[_currentIndex],
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Theme(
-            data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
-            child: SizedBox(
-              height: 60.0,
-              child: BottomNavigationBar(
-                backgroundColor: ColorManager.white.withOpacity(0.5),
-                iconSize: 20.0,
-                elevation: 0,
-                selectedItemColor: ColorManager.black,
-                unselectedItemColor: ColorManager.grey,
-                currentIndex: _currentIndex,
-                onTap: onTap,
-                showSelectedLabels: false,
-                showUnselectedLabels: false,
-                type: BottomNavigationBarType.fixed,
-                items: const [
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.home_outlined),
-                      label: AppStrings.homeTitle),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.search),
-                      label: AppStrings.searchTitle),
-                ],
+          pages[_currentIndex],
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Theme(
+              data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+              child: SizedBox(
+                height: 60.0,
+                child: BottomNavigationBar(
+                  backgroundColor: ColorManager.white.withOpacity(0.5),
+                  iconSize: 20.0,
+                  elevation: 0,
+                  selectedItemColor: ColorManager.black,
+                  unselectedItemColor: ColorManager.grey,
+                  currentIndex: _currentIndex,
+                  onTap: onTap,
+                  showSelectedLabels: false,
+                  showUnselectedLabels: false,
+                  type: BottomNavigationBarType.fixed,
+                  items: const [
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.home_outlined),
+                        label: AppStrings.homeTitle),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.search),
+                        label: AppStrings.searchTitle),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ])
-    );
+        ]));
   }
 
   onTap(int index) {

@@ -1,4 +1,3 @@
-
 import '../network/error_handler.dart';
 import '../response/responses.dart';
 
@@ -10,13 +9,13 @@ const CACHE_STORE_DETAILS_INTERVAL = 60 * 1000; // 30s in millis
 
 abstract class LocalDataSource {
   Future<HomeResponse> getHome();
+
   Future<void> saveHomeToCache(HomeResponse homeResponse);
 
   void clearCache();
+
   void removeFromCache(String key);
-
 }
-
 
 class LocalDataSourceImpl implements LocalDataSource {
   // run time cache

@@ -38,32 +38,47 @@ ThemeData getAppTheme() {
     //elevatedButtonTheme
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            textStyle: getSemiBoldStyle(color: ColorManager.black,fontSize: FontSize.s13,),
-            foregroundColor:ColorManager.black ,
+            textStyle: getSemiBoldStyle(
+              color: ColorManager.black,
+              fontSize: FontSize.s13,
+            ),
+            foregroundColor: ColorManager.black,
             backgroundColor: ColorManager.white,
-            disabledBackgroundColor:ColorManager.grey,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s0)))),
+            disabledBackgroundColor: ColorManager.grey,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(AppSize.s0)))),
     //text theme
     textTheme: TextTheme(
-      displayLarge: getSemiBoldStyle(color: ColorManager.darkGrey, fontSize: FontSize.s16),
-      headlineLarge: getBoldStyle(color: ColorManager.black, fontSize: FontSize.s25),
-      //Home , likes , About
-      headlineMedium:getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s20),
-      headlineSmall:getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s15),
-      titleLarge:getBoldStyle(color: ColorManager.black, fontSize: FontSize.s20),
-      // concept ,vision
-      titleMedium:getLightStyle(color: ColorManager.white, fontSize: FontSize.s13),
-      titleSmall:getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s13),
-      //connect by whatsapp //size 20
-      bodyLarge:getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s15),
-      //size 15
-      bodyMedium:getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s13),
-      // size 11
-      bodySmall: getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s10),
-      labelSmall: getBoldStyle(color: ColorManager.white, fontSize: FontSize.s12)
-      //egy size 10
-    ),
-  // input decoration theme (text form field)
+        displayLarge: getSemiBoldStyle(
+            color: ColorManager.darkGrey, fontSize: FontSize.s16),
+        headlineLarge:
+            getBoldStyle(color: ColorManager.black, fontSize: FontSize.s25),
+        //Home , likes , About
+        headlineMedium:
+            getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s20),
+        headlineSmall:
+            getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s15),
+        titleLarge:
+            getBoldStyle(color: ColorManager.black, fontSize: FontSize.s20),
+        // concept ,vision
+        titleMedium:
+            getLightStyle(color: ColorManager.white, fontSize: FontSize.s13),
+        titleSmall:
+            getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s13),
+        //connect by whatsapp //size 20
+        bodyLarge:
+            getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s15),
+        //size 15
+        bodyMedium:
+            getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s13),
+        // size 11
+        bodySmall:
+            getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s10),
+        labelSmall:
+            getBoldStyle(color: ColorManager.white, fontSize: FontSize.s12)
+        //egy size 10
+        ),
+    // input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
         //style
         // content padding

@@ -8,13 +8,14 @@ const String APPLICATION_JSON = "application/json";
 const String CONTENT_TYPE = "content-type";
 const String ACCEPT = "accept";
 const String AUTHORIZATION = "authorization";
+
 class DioFactory {
-   final AppPreferences _appPreferences;
+  final AppPreferences _appPreferences;
 
   DioFactory(this._appPreferences);
 
   Future<Dio> getDio() async {
-      Dio dio = Dio();
+    Dio dio = Dio();
     int _timeOut = 60 * 1000; // 1 min
     String token = await _appPreferences.getUserToken();
     Map<String, String> headers = {
@@ -41,4 +42,3 @@ class DioFactory {
     return dio;
   }
 }
-

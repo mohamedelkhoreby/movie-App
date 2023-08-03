@@ -8,11 +8,14 @@ import '../data_source/remote_data_source.dart';
 import '../network/error_handler.dart';
 import '../network/failure.dart';
 import '../network/network_info.dart';
+
 class RepositoryImpl implements Repository {
   final RemoteDataSource _remoteDataSource;
   final LocalDataSource _localDataSource;
   final NetworkInfo _networkInfo;
-  RepositoryImpl(this._remoteDataSource,this._localDataSource, this._networkInfo);
+
+  RepositoryImpl(
+      this._remoteDataSource, this._localDataSource, this._networkInfo);
 
   @override
   Future<Either<Failure, HomeObject>> getHome() async {
@@ -29,7 +32,7 @@ class RepositoryImpl implements Repository {
           final response = await _remoteDataSource.getHome();
 
           if (response.status == ApiInternalStatus.SUCCESS) // success
-              {
+          {
             // return data (success)
             // return right
             // save response to local data source

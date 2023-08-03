@@ -24,11 +24,12 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<SharedPreferences>(() => sharedPrefs);
 
   // app prefs instance
-  instance.registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
+  instance
+      .registerLazySingleton<AppPreferences>(() => AppPreferences(instance()));
 
   // network info
   instance.registerLazySingleton<NetworkInfo>(
-          () => NetworkInfoImpl(InternetConnectionChecker()));
+      () => NetworkInfoImpl(InternetConnectionChecker()));
 
   // dio factory
   instance.registerLazySingleton<DioFactory>(() => DioFactory(instance()));
@@ -39,13 +40,14 @@ Future<void> initAppModule() async {
 
   // remote data source
   instance.registerLazySingleton<RemoteDataSource>(
-          () => RemoteDataSourceImpl(instance<AppServiceClient>()));
+      () => RemoteDataSourceImpl(instance<AppServiceClient>()));
 
   // local data source
   instance.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
 
   // repository
-  instance.registerLazySingleton<Repository>(() => RepositoryImpl(instance(), instance(), instance()));
+  instance.registerLazySingleton<Repository>(
+      () => RepositoryImpl(instance(), instance(), instance()));
 }
 
 initHomeModule() {
