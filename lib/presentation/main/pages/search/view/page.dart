@@ -20,6 +20,7 @@ class SPage extends StatefulWidget {
 class SPageState extends State<SPage> {
   final HomeViewModel _viewModel = instance<HomeViewModel>();
   final _debouncer = DeBouncer();
+
   List<Store> userLists = [];
   List<Store> ulist = [];
 
@@ -55,6 +56,7 @@ class SPageState extends State<SPage> {
         stream: _viewModel.outputHomeData,
         builder: (context, snapshot) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _getStoresWidget(snapshot.data?.stores),
             ],
@@ -65,6 +67,7 @@ class SPageState extends State<SPage> {
   // Search Bar to List of typed Store
   Widget _getStoresWidget(List<Store>? stores) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
@@ -88,7 +91,7 @@ class SPageState extends State<SPage> {
                 child: Icon(Icons.search, color: ColorManager.black),
               ),
               contentPadding: const EdgeInsets.all(AppSize.s14),
-              hintText: AppStrings.searchTitle,
+              hintText: AppStrings.movieTitle,
             ),
             onChanged: (string) {
               _debouncer.run(() {
@@ -103,43 +106,44 @@ class SPageState extends State<SPage> {
             },
           ),
         ),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.all(AppPadding.p5),
-          itemCount: userLists.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-                side: BorderSide(
-                  color: ColorManager.black,
+        // list to show the result of search
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const ClampingScrollPhysics(),
+            padding: const EdgeInsets.all(AppPadding.p5),
+            itemCount: userLists.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppSize.s20),
+                  side: BorderSide(
+                    color: ColorManager.black,
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(AppPadding.p5),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    ListTile(
-                      title: Text(
-                        userLists[index].Title,
-                        style: TextStyle(
-                            fontSize: FontSize.s16, color: ColorManager.black),
-                      ),
-                      subtitle: Text(
-                        userLists[index].Year,
-                        style: TextStyle(
-                            fontSize: FontSize.s16, color: ColorManager.black),
-                      ),
-                    )
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(AppPadding.p5),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      ListTile(
+                        title: Text(
+                          userLists[index].Title,
+                          style: TextStyle(
+                              fontSize: FontSize.s16, color: ColorManager.black),
+                        ),
+                        subtitle: Text(
+                          userLists[index].Year,
+                          style: TextStyle(
+                              fontSize: FontSize.s16, color: ColorManager.black),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
-        ),
+              );
+            },
+          ),
       ],
     );
   }

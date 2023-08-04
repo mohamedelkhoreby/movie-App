@@ -1,14 +1,15 @@
 class AppStrings {
   //home page
-  static const String appName = "movie";
+  static const String appName = "Movie";
   static const String homeTitle = "Home";
   static const noRouteFound = "no Route Found";
   static const String success = "success";
   static const String dash = "-";
 
   //search page
-  static const String searchTitle = "search";
+  static const String searchTitle = "Search";
   static const String noMovieFound = "no movie found";
+  static const String movieTitle = "movie";
 
   // state renderer
   static const loading = "loading...";
