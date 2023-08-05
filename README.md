@@ -5,4 +5,5 @@ https://drive.google.com/file/d/10TgYa61nQDJLXSMGJQNwm2ZC0rCcAzhC/view?usp=shari
 1.open the link 
 2.choose the apk installer 
 3.Permission to allow the application to download from google drive.
+4.then open app
 
