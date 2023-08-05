@@ -23,23 +23,23 @@ dependencies:
   freezed: ^2.3.4
   get_it: ^7.6.0
   lottie: ^2.3.2
+  flutter_launcher_icons: ^0.13.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
   retrofit_generator: ^4.0.1
   build_runner: ^2.3.3
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter packages.
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path: "assets/images/demo-icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-  assets: 
+  assets:
+  - assets/images/demo-icon.png
   - assets/json/error.json
   - assets/json/empty.json
   - assets/json/loading.json

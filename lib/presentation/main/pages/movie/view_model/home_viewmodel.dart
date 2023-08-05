@@ -24,8 +24,7 @@ class HomeViewModel extends BaseViewModel
   }
 
   _getHomeData() async {
-    inputState.add(LoadingState(
-        stateRendererType: StateRendererType.fullScreenLoadingState));
+    inputState.add(LoadingState(stateRendererType: StateRendererType.fullScreenLoadingState));
     (await _homeUseCase.execute(Void)).fold(
         (failure) => {
               // left -> failure

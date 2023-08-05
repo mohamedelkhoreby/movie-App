@@ -107,42 +107,45 @@ class SPageState extends State<SPage> {
           ),
         ),
         // list to show the result of search
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const ClampingScrollPhysics(),
-            padding: const EdgeInsets.all(AppPadding.p5),
-            itemCount: userLists.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(AppSize.s20),
-                  side: BorderSide(
-                    color: ColorManager.black,
+          SizedBox(
+            height:MediaQuery.of(context).size.height,
+            child: ListView.builder(
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              padding: const EdgeInsets.all(AppPadding.p5),
+              itemCount: userLists.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppSize.s20),
+                    side: BorderSide(
+                      color: ColorManager.black,
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(AppPadding.p5),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      ListTile(
-                        title: Text(
-                          userLists[index].Title,
-                          style: TextStyle(
-                              fontSize: FontSize.s16, color: ColorManager.black),
-                        ),
-                        subtitle: Text(
-                          userLists[index].Year,
-                          style: TextStyle(
-                              fontSize: FontSize.s16, color: ColorManager.black),
-                        ),
-                      )
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppPadding.p5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        ListTile(
+                          title: Text(
+                            userLists[index].Title,
+                            style: TextStyle(
+                                fontSize: FontSize.s16, color: ColorManager.black),
+                          ),
+                          subtitle: Text(
+                            userLists[index].Year,
+                            style: TextStyle(
+                                fontSize: FontSize.s16, color: ColorManager.black),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
       ],
     );

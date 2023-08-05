@@ -18,8 +18,10 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+
   final HomeViewModel _viewModel = instance<HomeViewModel>();
 
+  // creates a new bound function
   _bind() {
     _viewModel.start();
   }
@@ -48,20 +50,19 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget _getContentWidget() {
-    double screenHeight = MediaQuery.of(context).size.height;
     return StreamBuilder<HomeViewObject>(
         stream: _viewModel.outputHomeData,
         builder: (context, snapshot) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _getStoresWidget(snapshot.data?.stores, screenHeight),
+              _getStoresWidget(snapshot.data?.stores),
             ],
           );
         });
   }
 
-  Widget _getStoresWidget(List<Store>? stores, screenHeight) {
+  Widget _getStoresWidget(List<Store>? stores) {
     if (stores != null) {
       return Column(
         children: [

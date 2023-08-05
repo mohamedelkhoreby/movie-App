@@ -16,7 +16,7 @@ class DioFactory {
 
   Future<Dio> getDio() async {
     Dio dio = Dio();
-    int _timeOut = 60 * 1000; // 1 min
+    int timeOut = 60 * 1000; // 1 min
     String token = await _appPreferences.getUserToken();
     Map<String, String> headers = {
       CONTENT_TYPE: APPLICATION_JSON,
@@ -26,8 +26,8 @@ class DioFactory {
 
     dio.options = BaseOptions(
         baseUrl: Constants.baseUrl,
-        connectTimeout: _timeOut,
-        receiveTimeout: _timeOut,
+        connectTimeout: timeOut,
+        receiveTimeout: timeOut,
         headers: headers);
 
     if (kReleaseMode) {
